@@ -22,7 +22,8 @@ class HalamanPertama extends StatelessWidget {
         title: Text("Halaman Pertama"),
       ),
       body: Center(
-        child: ListView(
+        child: GridView.count(
+          crossAxisCount: 2,
           children: <Widget>[
             RaisedButton(
               child: Text("Pindah ke halaman dua"),

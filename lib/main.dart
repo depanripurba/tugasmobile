@@ -1,78 +1,90 @@
 import 'package:flutter/material.dart';
-
-void main(){
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title:'routing navigation',
-    initialRoute: '/',
-    routes: {
-      '/':(context)=>HalamanPertama(),
-      HalamanKedua.routeName:(context)=>HalamanKedua(),
-      HalamanKetiga.routeName:(context)=>HalamanKetiga(),
-      
-    },
-    ),);
+void main() {
+  runApp(
+    MaterialApp(
+    debugShowCheckedModeBanner:false,
+    title:"uts Mobile",
+    initialRoute:"/",
+    routes:{
+      "/":(context)=>HalamanPertama(),
+       "/Halamandua":(context)=>HalamanKedua()
+    }
+    )
+  );
 }
 
 class HalamanPertama extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Halaman Pertama"),
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("UTS Pemograman Mobile"),
+          centerTitle:true,
+          
       ),
-      body: Center(
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: <Widget>[
-            RaisedButton(
-              child: Text("Pindah ke halaman dua"),
-              onPressed: (){
-                Navigator.pushNamed(context, HalamanKedua.routeName);
-              },
-            ),
-            RaisedButton(
-              child: Text("Pindah ke halaman tiga"),
-              onPressed: (){
-                Navigator.pushReplacementNamed(context, HalamanKetiga.routeName);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
+     body: new Text("hai nama saya depanri purba"),
+   );
   }
 }
-class HalamanKedua extends StatelessWidget{
-  static const String routeName = "/halamanKedua";
- @override
- Widget build(BuildContext context){
-   return Scaffold(
-    appBar:AppBar(
-      title: Text("ini adalah halaman kedua"),
-      ),
-      body:Center(
-        child: RaisedButton(
-          child: Text("kembali"),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),
-      ),
-  );
-  }
-}
-class HalamanKetiga extends StatelessWidget{
-  static const String routeName = "/halamanKetiga";
+
+class HalamanKedua extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Halaman Ketiga"),
-      ),
-      body:Center(
-        child: Text("ini adalah halaman ketiga"),
-      ) ,
-      );
+  Widget build(BuildContext context) {
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("Identitas (Hal1)")
+          
+      )
+   );
   }
 }
+
+class HalamanKetiga extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("Pendidikan (hal2)")
+          
+      )
+   );
+  }
+}
+
+class HalamanKeempat extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("Hoby (hal3)")
+          
+      )
+   );
+  }
+}
+
+class HalamanKelima extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("Keahlian (hal4)")
+          
+      )
+   );
+  }
+}
+
+class HalamanKeenam extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   return new Scaffold(
+      appBar: new AppBar(
+          title:new Text("Pendapatku (hal5)")
+          
+      )
+   );
+  }
+}
+
+

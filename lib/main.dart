@@ -14,26 +14,37 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(title: new Text("DataTable")),
+        appBar: new AppBar(title: new Text("Depanri-DataTable")),
         body: new Column(
           children: <Widget>[
-         new DataTable(
-           columns: [
-            DataColumn(
-              label: new Text("Nama barang"),
-              numeric: false
+            new Center(
+              child: new Text("Tabel Mahasiswa", style: new TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
             ),
-            DataColumn(
-              label: new Text("Harga"),
-              numeric: true
-            )
-           ],
-           rows: [],
-         )
-        ]
-        )
-        );
+          new DataTable(
+            columns: [
+              DataColumn(label: Text('NIRM')),
+              DataColumn(label: Text('Nama Mahasiswa')),
+              DataColumn(label: Text('Jurusan')),
+            ],
+            rows: [
+              DataRow(cells: [
+                DataCell(Text('2018020777')),
+                DataCell(Text('Depanri Purba')),
+                DataCell(Text('Komputer')),
+              ]),
+               DataRow(cells: [
+              DataCell(Text('2018020019')),
+              DataCell(Text('Vina Al Fitriani')),
+              DataCell(Text('Hukum')),
+            ]),
+            DataRow(cells: [
+              DataCell(Text('2018021014')),
+              DataCell(Text('Dien Ronatio Tambunan')),
+              DataCell(Text('Ekonomi')),
+            ]),
+            ],
+          ),
+          new Center(child: new Text("Halaman 2"),)
+        ]));
   }
 }
-
-
